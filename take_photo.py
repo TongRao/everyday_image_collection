@@ -1,6 +1,7 @@
 from PIL import Image
 import photos
-
+import numpy as np
+import matplotlib.pyplot as plt
 
 def get_index(label):
 	"""
@@ -73,6 +74,7 @@ if __name__ == '__main__':
 	photo_path = 'photos/'
 	
 	while(True):
+		
 		# take a photo
 		img = photos.capture_image()
 		
@@ -86,7 +88,7 @@ if __name__ == '__main__':
 		idx = int(get_index(label))
 		
 		# store photo
-		img.save("{}{}_{}.jpg".format(photo_path, label, idx))
+		resize_img.save("{}{}_{}.jpg".format(photo_path, label, idx))
 		
 		# update index
 		update_index(label, idx)
